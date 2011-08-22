@@ -21,12 +21,15 @@ import javax.crypto.NoSuchPaddingException;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class ArmoredboxActivity extends Activity {
+public class ArmoredboxAddItemActivity extends Activity {
 	private TextView plainText;
 	private TextView cipherText;
 	private TextView cipherTextVerify;
@@ -43,6 +46,25 @@ public class ArmoredboxActivity extends Activity {
         Button encryptButton = (Button) findViewById(R.id.encryptButton);
         
         encryptButton.setOnClickListener(new EncryptListener());
+    }
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.armoredboxmenu, menu);
+        return true;
+    }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+        case R.id.listAll:
+        	finish();
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
     }
     
     private class EncryptListener implements OnClickListener{

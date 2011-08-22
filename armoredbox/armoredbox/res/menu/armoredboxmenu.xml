@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/addItem" android:titleCondensed="Add" android:title="Add Item"></item>
+    <item android:id="@+id/removeItem" android:titleCondensed="Remove" android:title="Remove Item"></item>
+    <item android:id="@+id/listAll" android:titleCondensed="List" android:title="List All Items"></item>
+    <item android:id="@+id/reloadList" android:titleCondensed="Reload" android:title="Reload List"></item>
+</menu>
